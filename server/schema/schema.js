@@ -62,22 +62,34 @@ const SpeakerType = new GraphQLObjectType({
 const RootQuery = new GraphQLObjectType({
     name : 'RootQueryType',
     fields : {
-       meetup : {
+        meetup : {
            type :MeetupType,
            args: { id : {type : GraphQLID}}, 
            resolve(parents, args){
                //code to get from db/other source
                return _.find(meetups, {id: args.id});
            }
-       },
-       speaker : {
-        type :SpeakerType,
-        args: { id : {type : GraphQLID}}, 
-        resolve(parents, args){
-            //code to get from db/other source
-            return _.find(speakers, {id: args.id});
-        }
-    },
+        },
+        speaker : {
+            type :SpeakerType,
+            args: { id : {type : GraphQLID}}, 
+            resolve(parents, args){
+                //code to get from db/other source
+                return _.find(speakers, {id: args.id});
+            }
+        },
+        meetups : {
+            type : new GraphQLList(MeetupType),
+            resolve(parents, args){
+                return meetups;
+            }
+        },
+        speakers : {
+            type : new GraphQLList(SpeakerType),
+            resolve(parents, args){
+                return speakers;
+            }
+        },
     }
 });
 
