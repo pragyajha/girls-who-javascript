@@ -1,6 +1,11 @@
 const graphql = require('graphql');
 const _ = require('lodash');
-const { GraphQLObjectType, GraphQLString, GraphQLSchema } = graphql;
+const { 
+    GraphQLObjectType, 
+    GraphQLString, 
+    GraphQLSchema,
+    GraphQLID,
+ } = graphql;
 
 //dummy data
 var meetups = [
@@ -12,15 +17,30 @@ var meetups = [
     {name: 'GirlsWhoJS Meetup#6',date: 'May 6,2018', venue:'Treebo', id: '6'},
     {name: 'GirlsWhoJS Meetup#7',date: 'June 10,2018', venue:'HasGeek', id: '7'},
     {name: 'GirlsWhoJS Meetup#8',date: 'July 15,2018', venue:'Treebo', id: '8'}
-]
+];
+
+var speakers = [
+    {name: 'Adisha Porwal', company:'TypeSet.io', id: '1'},
+    {name: 'Pragya Jha', company:'Treebo Hotels', id: '2'},
+    {name: 'Toshi Gupta', company:'Flipkart', id: '3'},
+];
 
 const MeetupType = new GraphQLObjectType({
     name : 'Meetup',
     fields : () => ({
-        id: {type : GraphQLString},
+        id: {type : GraphQLID},
         name: {type : GraphQLString},
         date: {type : GraphQLString},
         venue: {type : GraphQLString}
+    })
+});
+
+const SpeakerType = new GraphQLObjectType({
+    name : 'Speaker',
+    fields : () => ({
+        id: {type : GraphQLID},
+        name: {type : GraphQLString},
+        company: {type : GraphQLString}
     })
 });
 
@@ -30,12 +50,20 @@ const RootQuery = new GraphQLObjectType({
     fields : {
        meetup : {
            type :MeetupType,
-           args: { id : {type : GraphQLString}}, 
+           args: { id : {type : GraphQLID}}, 
            resolve(parents, args){
                //code to get from db/other source
                return _.find(meetups, {id: args.id});
            }
-       }
+       },
+       speaker : {
+        type :SpeakerType,
+        args: { id : {type : GraphQLID}}, 
+        resolve(parents, args){
+            //code to get from db/other source
+            return _.find(speakers, {id: args.id});
+        }
+    },
     }
 });
 
