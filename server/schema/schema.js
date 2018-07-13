@@ -5,18 +5,19 @@ const {
     GraphQLString, 
     GraphQLSchema,
     GraphQLID,
+    GraphQLList
  } = graphql;
 
 //dummy data
 var meetups = [
-    {name: 'GirlsWhoJS Meetup#1',date: 'July 1,2017', venue:'HasGeek', id: '1'},
-    {name: 'GirlsWhoJS Meetup#2',date: 'July 27,2017', venue:'Flipkart', id: '2'},
-    {name: 'GirlsWhoJS Meetup#3',date: 'Oct 7,2017', venue:'HasGeek', id: '3'},
-    {name: 'GirlsWhoJS Meetup#4',date: 'Dec 17,2017', venue:'HasGeek', id: '4'},
-    {name: 'GirlsWhoJS Meetup#5',date: 'March 11,2018', venue:'Treebo', id: '5'},
-    {name: 'GirlsWhoJS Meetup#6',date: 'May 6,2018', venue:'Treebo', id: '6'},
-    {name: 'GirlsWhoJS Meetup#7',date: 'June 10,2018', venue:'HasGeek', id: '7'},
-    {name: 'GirlsWhoJS Meetup#8',date: 'July 15,2018', venue:'Treebo', id: '8'}
+    {name: 'GirlsWhoJS Meetup#1',date: 'July 1,2017', venue:'HasGeek', id: '1', speakerId :'1'},
+    {name: 'GirlsWhoJS Meetup#2',date: 'July 27,2017', venue:'Flipkart', id: '2', speakerId :'2'},
+    {name: 'GirlsWhoJS Meetup#3',date: 'Oct 7,2017', venue:'HasGeek', id: '3', speakerId :'3'},
+    {name: 'GirlsWhoJS Meetup#4',date: 'Dec 17,2017', venue:'HasGeek', id: '4', speakerId :'1'},
+    {name: 'GirlsWhoJS Meetup#5',date: 'March 11,2018', venue:'Treebo', id: '5', speakerId :'2'},
+    {name: 'GirlsWhoJS Meetup#6',date: 'May 6,2018', venue:'Treebo', id: '6', speakerId :'3'},
+    {name: 'GirlsWhoJS Meetup#7',date: 'June 10,2018', venue:'HasGeek', id: '7', speakerId :'1'},
+    {name: 'GirlsWhoJS Meetup#8',date: 'July 15,2018', venue:'Treebo', id: '8', speakerId :'2'}
 ];
 
 var speakers = [
@@ -31,7 +32,14 @@ const MeetupType = new GraphQLObjectType({
         id: {type : GraphQLID},
         name: {type : GraphQLString},
         date: {type : GraphQLString},
-        venue: {type : GraphQLString}
+        venue: {type : GraphQLString},
+        speaker: {
+            type: SpeakerType,
+            resolve(parent,args){
+                console.log(parent);
+                return _.find(speakers, {id: parent.speakerId})
+            }
+        }
     })
 });
 
@@ -40,7 +48,13 @@ const SpeakerType = new GraphQLObjectType({
     fields : () => ({
         id: {type : GraphQLID},
         name: {type : GraphQLString},
-        company: {type : GraphQLString}
+        company: {type : GraphQLString},
+        meetups: {
+            type: new GraphQLList(MeetupType),
+            resolve(parent, args){
+                return _.filter(meetups,{speakerId: parent.id})
+            }
+        }
     })
 });
 
