@@ -8,10 +8,12 @@ class MeetupDetails extends Component {
         if(meetup){
             return(
                 <div>
-                    <h2>{ meetup.name }</h2>
-                    <p>{ meetup.venue }</p>
-                    <p>{ meetup.speaker.name }</p>
-                    <p>All meetups by this speaker:</p>
+                    <h2>Meetup Details</h2>
+                    <h3><u>Name</u> : { meetup.name }</h3>
+                    <h3><u>Date</u> : { meetup.date }</h3>
+                    <h3><u>Venue</u>: { meetup.venue }</h3>
+                    <h3><u>Speaker Name:</u> { meetup.speaker.name }</h3>
+                    <h3>All meetups by this speaker:</h3>
                     <ul className="other-meetups">
                         { meetup.speaker.meetups.map(item => {
                             return <li key={item.id}>{ item.name }</li>

@@ -47,12 +47,13 @@ form .field{
 
 form label{
   text-align: right;
-  padding: 6px;
+  padding: 10px;
 }
 
 form input, form select{
+  font-size: 16px;
   margin: 4px 0;
-  padding: 6px;
+  padding: 10px;
   box-sizing: border-box;
 }
 
@@ -76,7 +77,7 @@ form button{
   width: 40%;
   height: 100%;
   background: #AD1457;
-  padding: 30px;
+  padding: 40px;
   overflow: auto;
   box-shadow: -2px -3px 5px rgba(0,0,0,0.3);
   box-sizing: border-box;

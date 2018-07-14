@@ -41,19 +41,19 @@ class AddMeetup extends Component {
         return(
             <form id="add-meetup" onSubmit={ this.submitForm.bind(this) } >
                 <div className="field">
-                    <label>meetup name:</label>
+                    <label>Meetup name:</label>
                     <input type="text" onChange={ (e) => this.setState({ name: e.target.value }) } />
                 </div>
                 <div className="field">
-                    <label>venue:</label>
+                    <label>Venue:</label>
                     <input type="text" onChange={ (e) => this.setState({ venue: e.target.value }) } />
                 </div>
                 <div className="field">
-                    <label>date:</label>
+                    <label>Date:</label>
                     <input type="text" onChange={ (e) => this.setState({ date: e.target.value }) } />
                 </div>
                 <div className="field">
-                    <label>speaker:</label>
+                    <label>Speaker:</label>
                     <select onChange={ (e) => this.setState({ speakerId: e.target.value }) } >
                         <option>Select speaker</option>
                         { this.displaySpeakers() }
