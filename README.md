@@ -6,3 +6,4 @@ A Starter kit for creating an app with GraphQL, Apollo and React.
 ## Quickstart
   - npm install
   - npm start
+(both client and server folders)

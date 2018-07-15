@@ -4,7 +4,7 @@ body{
 }
 
 #main h1{
-  color: #444;
+  color: #1F7A8C;
   text-align: center;
 }
 
@@ -24,10 +24,10 @@ body{
   margin: 12px;
   padding: 10px;
   border-radius: 4px;
-  border: 1px solid #880E4F;
+  border: 1px solid #1F7A8C;
   box-shadow: 1px 2px 3px rgba(0,0,0,0.3);
   cursor: pointer;
-  color: #880E4F;
+  color: #1F7A8C;
 }
 
 form{
@@ -60,7 +60,7 @@ form input, form select{
 form button{
   color: #fff;
   font-size: 2em;
-  background: #AD1457;
+  background: #1F7A8C;
   border: 0;
   padding: 0 10px;
   border-radius: 50%;
@@ -76,7 +76,7 @@ form button{
   right: 0;
   width: 40%;
   height: 100%;
-  background: #AD1457;
+  background: #1F7A8C;
   padding: 40px;
   overflow: auto;
   box-shadow: -2px -3px 5px rgba(0,0,0,0.3);

@@ -10,14 +10,16 @@ class MeetupDetails extends Component {
                 <div>
                     <h2>Meetup Details</h2>
                     <h3><u>Name</u> : { meetup.name }</h3>
-                    <h3><u>Date</u> : { meetup.date }</h3>
                     <h3><u>Venue</u>: { meetup.venue }</h3>
+                    <h3><u>Date</u> : { meetup.date }</h3>
                     <h3><u>Speaker Name:</u> { meetup.speaker.name }</h3>
                     <h3>All meetups by this speaker:</h3>
                     <ul className="other-meetups">
-                        { meetup.speaker.meetups.map(item => {
+                        { 
+                            meetup.speaker.meetups.map(item => {
                             return <li key={item.id}>{ item.name }</li>
-                        })}
+                            })
+                        }
                     </ul>
                 </div>
             );

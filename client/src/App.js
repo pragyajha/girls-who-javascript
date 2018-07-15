@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
-
-// components
 import MeetupList from './components/MeetupList';
 import AddMeetup from './components/AddMeetup';
 // apollo client setup
@@ -15,7 +13,7 @@ class App extends Component {
     return (
       <ApolloProvider client={client}>
         <div id="main">
-          <h1>Girls who javascript</h1>
+          <h1>Girls Who Javascript</h1>
           <MeetupList />
           <AddMeetup />
         </div>
