@@ -6,7 +6,7 @@ A demo given at Girls Who Javascript Meetup#8 to kick start creating an app with
 <img src="https://raw.githubusercontent.com/pragyajha/girls-who-javascript/master/client/assets/girls-who-js.png"/>
 
 ### Features
-This project gives an overview of all meetups organised by Girls Who Javascript
+This project gives an overview of all meetups organised by [Girls Who Javascript](https://www.meetup.com/Girls-Who-Javascript)
 
 - View list of all meetups
 - View details of each meetup
@@ -56,8 +56,9 @@ This is what we set to avoid, having multiple api calls contacting through our f
 <img src="https://raw.githubusercontent.com/pragyajha/girls-who-javascript/master/client/assets/restAPIendpoints.png"/>
 
 ### Contribute
-
 From opening a bug report to creating a pull request every contribution is appreciated and welcome. If you're planning to implement a new feature or make a change in the existing codebase please [create an issue](https://github.com/pragyajha/girls-who-javascript/issues/new) first.
+
+
 
 ### Credits
 Inspired from [graphql-playlist](https://github.com/iamshaunjp/graphql-playlist)
