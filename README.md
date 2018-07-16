@@ -1,6 +1,6 @@
 
 <h2 align="center">How to GraphQL Demo</h4>
-A demo given at Girls Who Javascript Meetup#8 to kick start creating an app with React, Apollo and GraphQL.
+A demo given at [Girls Who Javascript](https://www.meetup.com/Girls-Who-Javascript)  Meetup#8 to kick start creating an app with React, Apollo and GraphQL.
 
 ### Screenshot
 <img src="https://raw.githubusercontent.com/pragyajha/girls-who-javascript/master/client/assets/girls-who-js.png"/>
