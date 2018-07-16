@@ -55,3 +55,14 @@ This is what we set to avoid, having multiple api calls contacting through our f
 
 <img src="https://raw.githubusercontent.com/pragyajha/girls-who-javascript/master/client/assets/restAPIendpoints.png"/>
 
+### Contribute
+
+From opening a bug report to creating a pull request every contribution is appreciated and welcome. If you're planning to implement a new feature or make a change in the existing codebase please [create an issue](https://github.com/pragyajha/girls-who-javascript/issues/new) first.
+
+### Credits
+Inspired from [graphql-playlist](https://github.com/iamshaunjp/graphql-playlist)
+Thanks to [Shaun](https://github.com/iamshaunjp)
+
+### License
+
+MIT © [pragyajha](https://github.com/pragyajha)
